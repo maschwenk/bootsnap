@@ -35,6 +35,8 @@ module Bootsnap
           return nil if defined?(Coverage) && Bootsnap::CompileCache::Native.coverage_running?
 
           puts `whoami`
+          puts "path #{path.to_s}"
+          puts "cache dir #{Bootsnap::CompileCache::ISeq.cache_dir}"
           Bootsnap::CompileCache::Native.fetch(
             Bootsnap::CompileCache::ISeq.cache_dir,
             path.to_s,
