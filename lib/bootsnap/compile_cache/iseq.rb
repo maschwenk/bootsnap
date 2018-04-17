@@ -34,6 +34,7 @@ module Bootsnap
           # Having coverage enabled prevents iseq dumping/loading.
           return nil if defined?(Coverage) && Bootsnap::CompileCache::Native.coverage_running?
 
+          puts `whoami`
           Bootsnap::CompileCache::Native.fetch(
             Bootsnap::CompileCache::ISeq.cache_dir,
             path.to_s,
